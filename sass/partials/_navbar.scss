@@ -1,0 +1,118 @@
+/*
+ * Navigation bar components
+ */
+
+.nav-container {
+	width: 100%;
+	padding: $nav-padding;
+	border-bottom: $nav-border solid $nav-border-color;
+	margin: $nav-margin;
+	background: linear-gradient(to right, $nav-bg-color, $nav-middle-bg-color 30%, $nav-middle-bg-color 70%, $nav-bg-color);
+
+	a:hover, a:focus {
+		text-decoration: none;
+	}
+
+	ul {
+		padding: 0;
+		margin: 0;
+	}
+
+	li {
+		display: inline-block;
+		list-style-type: none;
+	}
+}
+
+.nav-header {
+	width: $nav-header-width;
+	margin: 0;
+	font-size: 1.0em;
+}
+
+.nav-item {
+	display: block;
+	min-width: $nav-item-min-width;
+	padding: $nav-item-padding-with-border;
+	border: $nav-item-border solid $border-color;
+	border-radius: $nav-border-radius;
+	font-size: 1.0em;
+	text-align: center;
+	white-space: nowrap;
+	color: $nav-item-color;
+	background-color: $nav-item-bg-color;
+	transition: color $speed, background-color $speed;
+
+	&:hover {
+		color: $nav-item-hover-color;
+		background-color: $nav-item-hover-bg-color;
+	}
+}
+
+.is-header-item {
+	padding: $nav-item-padding;
+	border: 0;
+	background-color: transparent;
+	
+	&:hover {
+		background-color: transparent;
+	}
+}
+
+.is-menu-item {
+	display: none;
+	min-width: 0;
+}
+
+.is-active-item {
+	background-color: $nav-active-item-bg-color;
+
+	&:hover {
+		background-color: $nav-active-item-hover-bg-color;
+	}
+}
+
+
+// Style for small and medium devices
+
+@media (max-width: $M) {
+	.nav-menu-wrapper:hover {
+		width: 100%;
+	}
+
+	.is-menu-item {
+		display: inline-block;
+		padding: $nav-item-padding-with-border;
+		border: $nav-item-border solid $border-color;
+		margin-left: $nav-padding + $nav-margin;
+
+		.nav-menu-wrapper:hover & {
+			background-color: $nav-item-hover-bg-color;
+		}
+	}
+
+	.nav-menu-list {
+		display: none;
+
+		&:first-of-type {
+			margin-top: $nav-padding + $nav-margin;
+		}
+		
+		.nav-menu-wrapper:hover & {
+			display: block;
+			background: linear-gradient(to right, $nav-bg-color, $nav-middle-bg-color 30%, $nav-middle-bg-color 70%, $nav-bg-color);
+		}
+
+		li {
+			display: list-item;
+			border-top: $nav-item-border solid $border-color;
+		}
+
+		.nav-item {
+			padding: $nav-item-padding;
+			border: 0;
+			border-radius: 0;
+			text-align: left
+		}
+	}
+}
