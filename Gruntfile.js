@@ -164,15 +164,15 @@ module.exports = function(grunt) {
 			},
 			build : {
 				src : 'sass/styles.scss',
-				dest : 'WebContent/css/styles.css'
+				dest : 'WebContent/shaderbox/css/styles.css'
 			}
 		},
 
 		// grunt-autoprefixer
 		autoprefixer : {
 			build : {
-				src : 'WebContent/css/styles.css',
-				dest : 'WebContent/css/styles.css'
+				src : 'WebContent/shaderbox/css/styles.css',
+				dest : 'WebContent/shaderbox/css/styles.css'
 			}
 		},
 
