@@ -15,7 +15,7 @@ module.exports = function(grunt) {
 					replacement : name
 				}, {
 					match : 'jsFile',
-					replacement : '/js/' + jsFile
+					replacement : '/shaderbox/js/' + jsFile
 				}, {
 					match : 'vertexShaderFile',
 					replacement : '/shaders/' + vertexShader
